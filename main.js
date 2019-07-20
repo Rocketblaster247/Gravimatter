@@ -44,8 +44,8 @@ var prepLev = function () {
   key = false;
   for (var i = 0; i < lv.length; i ++) {
     for (var e = 0; e < lv[i].length; e ++) {
-      var px = x * 8;
-      var py = y * 8;
+      var px = i * 8;
+      var py = e * 8;
       switch(lv[i][e]) {
         case 3:
           console.log("Starting @ " + i + ", " + e);
