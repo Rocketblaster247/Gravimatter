@@ -18,22 +18,22 @@ var lv;
 var sm = new Image();
 sm.src = 'sm.png';
 var drawSky = function (x, y) {
-  ctx.drawImage(sm, x, y, 24, 16, 0, 0, 8, 8);
+  ctx.drawImage(sm, 0, 0, 8, 8, x, y, 8, 8);
 };
 var drawStone = function (x, y) {
-  ctx.drawImage(sm, x, y, 24, 16, 8, 0, 8, 8);
+  ctx.drawImage(sm, 8, 0, 8, 8, x, y, 8, 8);
 };
 var drawGSwitch = function (x, y) {
-  ctx.drawImage(sm, x, y, 24, 16, 16, 0, 8, 8);
+  ctx.drawImage(sm, 16, 0, 8, 8, x, y, 8, 8);
 };
 var drawStart = function (x, y) {
-  ctx.drawImage(sm, x, y, 24, 16, 0, 8, 8, 8);
+  ctx.drawImage(sm, 0, 8, 8, 8, x, y, 8, 8);
 };
 var drawEnd = function (x, y) {
-  ctx.drawImage(sm, x, y, 24, 16, 8, 8, 8, 8);
+  ctx.drawImage(sm, 8, 8, 8, 8, x, y, 8, 8);
 };
 var drawKey = function (x, y) {
-  ctx.drawImage(sm, x, y, 24, 16, 16, 8, 8, 8);
+  ctx.drawImage(sm, 16, 8, 8, 8, x, y, 8, 8);
 };
 var prepLev = function () {
   lv = lvs[p.l];
