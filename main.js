@@ -12,12 +12,28 @@ var lvs = [
   ],
 ];
 var cnv = document.getElementById("cnv");
+var ctx = cnv.getContext("2d");
 var key = false;
 var lv;
-var keyIMG = new Image();
-keyIMG.src = 'key.png';
-var drawKey = function () {
-  ctx.drawImage();
+var sm = new Image();
+sm.src = 'sm.png';
+var drawSky = function (x, y) {
+  ctx.drawImage(sm, x, y, 8, 8, 0, 0, 8, 8);
+};
+var drawStone = function (x, y) {
+  ctx.drawImage(sm, x, y, 8, 8, 8, 0, 8, 8);
+};
+var drawGSwitch = function (x, y) {
+  ctx.drawImage(sm, x, y, 8, 8, 16, 0, 8, 8);
+};
+var drawStart = function (x, y) {
+  ctx.drawImage(sm, x, y, 8, 8, 0, 8, 8, 8);
+};
+var drawEnd = function (x, y) {
+  ctx.drawImage(sm, x, y, 8, 8, 8, 8, 8, 8);
+};
+var drawKey = function (x, y) {
+  ctx.drawImage(sm, x, y, 8, 8, 16, 8, 8, 8);
 };
 var prepLev = function () {
   lv = lvs[p.l];
@@ -35,4 +51,5 @@ var prepLev = function () {
       }
     }
   }
+  drawKey(2, 2);
 };
