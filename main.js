@@ -53,3 +53,7 @@ var prepLev = function () {
   }
   drawKey(2, 2);
 };
+var draw = function () {
+  prepLev();
+};
+sm.onload = draw;
