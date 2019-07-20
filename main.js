@@ -17,29 +17,35 @@ var key = false;
 var lv;
 var sm = new Image();
 sm.src = 'sm.png';
-var drawSky = function (x, y) {
-  ctx.drawImage(sm, 0, 0, 8, 8, x, y, 8, 8);
-};
-var drawStone = function (x, y) {
-  ctx.drawImage(sm, 8, 0, 8, 8, x, y, 8, 8);
-};
-var drawGSwitch = function (x, y) {
-  ctx.drawImage(sm, 16, 0, 8, 8, x, y, 8, 8);
-};
-var drawStart = function (x, y) {
-  ctx.drawImage(sm, 0, 8, 8, 8, x, y, 8, 8);
-};
-var drawEnd = function (x, y) {
-  ctx.drawImage(sm, 8, 8, 8, 8, x, y, 8, 8);
-};
-var drawKey = function (x, y) {
-  ctx.drawImage(sm, 16, 8, 8, 8, x, y, 8, 8);
+var drawO = function (x, y, id) {
+  switch (id) {
+    case 0:
+      ctx.drawImage(sm, 0, 0, 8, 8, x, y, 8, 8);
+      break;
+    case 1:
+      ctx.drawImage(sm, 8, 0, 8, 8, x, y, 8, 8);
+      break;
+    case 2:
+      ctx.drawImage(sm, 16, 0, 8, 8, x, y, 8, 8);
+      break;
+    case 3:
+      ctx.drawImage(sm, 0, 8, 8, 8, x, y, 8, 8);
+      break;
+    case 4:
+      ctx.drawImage(sm, 8, 8, 8, 8, x, y, 8, 8);
+      break;
+    case 5:
+      ctx.drawImage(sm, 16, 8, 8, 8, x, y, 8, 8);
+      break;
+  }
 };
 var prepLev = function () {
   lv = lvs[p.l];
   key = false;
   for (var i = 0; i < lv.length; i ++) {
     for (var e = 0; e < lv[i].length; e ++) {
+      var px = x * 8;
+      var py = y * 8;
       switch(lv[i][e]) {
         case 3:
           console.log("Starting @ " + i + ", " + e);
@@ -49,9 +55,9 @@ var prepLev = function () {
           key = true;
           break;
       }
+      drawO(px, py, lv[i][e]);
     }
   }
-  drawKey(2, 2);
 };
 var draw = function () {
   prepLev();
